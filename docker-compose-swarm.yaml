@@ -3,7 +3,7 @@ services:
     web:
         image: shekeriev/bgapp-web
         deploy:
-            replicas: 5
+            replicas: 3
         ports:
             - 8080:80
         volumes:
@@ -12,6 +12,8 @@ services:
             - app-network
     db:
         image: shekeriev/bgapp-db
+        deploy:
+            replicas: 1
         networks:
             - app-network
         environment:
